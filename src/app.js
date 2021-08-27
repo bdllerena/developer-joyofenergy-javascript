@@ -13,7 +13,7 @@ app.get("/readings/read/:smartMeterId", (req, res) => {
     res.send(read(getReadings, req));
 });
 
-app.get("/", (res) => {
+app.get("/", (req,res) => {
     res.send("Testing pipeline");
 });
 
