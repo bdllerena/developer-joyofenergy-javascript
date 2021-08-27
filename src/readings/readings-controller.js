@@ -3,6 +3,11 @@ const read = (getData, req) => {
     return getData(meter);
 };
 
+const readAll = (getData, req) => {
+    const meter = req.params.smartMeterId;
+    return getData(meter);
+};
+
 const store = (setData, req) => {
     const data = req.body;
     return setData(data.smartMeterId, data.electricityReadings);

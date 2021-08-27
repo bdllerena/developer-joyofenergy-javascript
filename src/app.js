@@ -13,6 +13,10 @@ app.get("/readings/read/:smartMeterId", (req, res) => {
     res.send(read(getReadings, req));
 });
 
+app.get("/readings", (req, res) => {
+    res.send(readAll(getReadings, req));
+});
+
 app.post("/readings/store", (req, res) => {
     res.send(store(setReadings, req));
 });
@@ -24,6 +28,10 @@ app.get("/price-plans/recommend/:smartMeterId", (req, res) => {
 app.get("/price-plans/compare-all/:smartMeterId", (req, res) => {
     res.send(compare(getReadings, req));
 });
+
+app.get("/readings/average/last-week:smartMeterId", (req,res) => {
+    res.send(read(getReadings,req));
+})
 
 //set to 3000 for heroku deployment
 const port = process.env.PORT || 3000;
