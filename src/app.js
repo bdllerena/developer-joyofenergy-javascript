@@ -25,6 +25,7 @@ app.get("/price-plans/compare-all/:smartMeterId", (req, res) => {
     res.send(compare(getReadings, req));
 });
 
+//set to 3000 for heroku deployment
 const port = process.env.PORT || 3000;
 app.listen(port);
 
