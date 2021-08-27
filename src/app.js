@@ -13,8 +13,8 @@ app.get("/readings/read/:smartMeterId", (req, res) => {
     res.send(read(getReadings, req));
 });
 
-app.get("/readings", (req, res) => {
-    res.send(readAll(getReadings, req));
+app.get("/", (res) => {
+    res.send("Testing pipeline");
 });
 
 app.post("/readings/store", (req, res) => {
